@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+  body {
+  height: 1000px;
+  background-image: linear-gradient(to right,#1E771F,#FFD966,#97D077);
+}
+</style>
+{% endblock %}
+{% block body %}
+<br><br>
+<b><h1 style="font-size: 90px; " align="center"> Drone Image Stitcher </h1></b> <br> <br>
+
+<form action="/stitching"  align="center" enctype="multipart/form-data" method="POST">
+    <h2 >Enter Folder Name You want to create</h2>
+    <input type="text" id="folder_name" , name="folder_name"><br><br>
+    <h2 >Click on the "Choose File" button to upload more than one file:</h2><br><br>
+  <input type="file" id="images" name="images" , multiple><br><br>
+  <input type="submit" value="Stitch Images" class="btn btn-primary mt-2">
+</form>
+<br><br><br>
+
+{% if error %}
+       <h2 style="color:red; text-align: center;"> {{ error }} </h2>
+{% elif output_image %}
+        <img src=" {{url_for('static' , filename= output_image)}}" class = 'center'>
+{% endif %}
+
+{% endblock %}

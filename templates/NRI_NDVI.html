@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+  body {
+  height: 1000px;
+  background-image: linear-gradient(to left,#FFD966,#97D077);
+}
+</style>
+{% endblock %}
+{% block body %}
+<br><br>
+<h1 align="center">NIR to NDVI</h1>
+<h3 align="center">Near-Infrared Image to Normalized Difference Vegetation Index Image</h3>
+<br><br>
+<form  align="center" action="/NRI_NDVI" method ='POST' enctype="multipart/form-data">
+  <h3>Insert an NIR Image to have it's NDVI Image</h3><br><br>
+  <label for="nriImage">Select Image:</label>
+  <input type="file" id="nriImage" name="nriImage" accept="image/*" multiple><br><br>
+  <input type="submit" value="Convert" class="btn btn-primary mt-2">
+</form>
+
+<br><br><br>
+
+{% if image_name %}
+<img src=" {{url_for('static' , filename= image_name)}}" class = 'center'>
+{% endif %}
+
+{% endblock %}

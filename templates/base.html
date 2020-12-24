@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href='https://fonts.googleapis.com/css?family=Arizonia'rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<style>
+		h1{
+		     color:black;
+			 font-size:55px;
+			 font-family: 'Arizonia';
+			 }
+
+		.center {
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              width: 50%;
+            }
+
+	</style>
+    <title>Sat Shri Akal Punjab</title>
+    {% block head %}{% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <h2 class="navbar-brand text-white">Sat Shri Akal Punjab</h2>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link text-white" href="{{url_for('image_stitch')}}" >Image Sticher</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{{url_for('nir_ndvi')}}">NIR to NDVI</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{{url_for('rgb_vari')}}">RGB to VARI</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+{% block body %}{% endblock %}
+</body>
+</html>

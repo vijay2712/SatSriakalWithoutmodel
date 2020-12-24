@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    h2{
+    margin-left: 95px; }
+    body{
+    background-image: url({{url_for('static',filename='background.jpg')}});
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<br><br>
+<h1 style="font-size: 105px; " align="center">Sat Shri Akal Punjab</h1>
+<br><br>
+<div style="width: 400px; height:300px;border-radius: 45px;margin-left: 37%; height: 270px;
+  background-image: linear-gradient(to left,#FFD966,#97D077); ">
+  <h1 class="text-white" style="margin-left: 20px;text-shadow:1px 1px 0;">By:</h1>
+
+    <h2 class="text-white" >Arshdeep Singh</h2>
+    <h2 class="text-white" >Gurjot Singh</h2>
+    <h2 class="text-white" >Malika Jain</h2>
+    <h2 class="text-white" >Vijay Garg</h2>
+</div>
+{% endblock %}

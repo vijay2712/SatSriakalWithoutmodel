@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+  body {
+  height: 1000px;
+  background-image: linear-gradient(to left,#1E771F,#FFD966,#97D077);
+}
+</style>
+{% endblock %}
+{% block body %}
+    <br><br>
+    <h1 align="center">RGB to VARI</h1>
+    <h3 align="center">Red- Green- Blue Image to Visible Atmospherically Resistant Index  Image</h3>
+    <br><br>
+    <form  align="center" action="/Rgb_Vari" method ='POST' enctype="multipart/form-data">
+
+      <h3>Insert an RGB Image to have it's VARI Image</h3><br><br>
+      <label for="rgbImage">Select Image:</label>
+      <input type="file" id="rgbImage" name="rgbImage" accept="image/*" multiple><br><br>
+      <input type="submit" value="Convert" class="btn btn-primary mt-2">
+    </form>
+
+    <br><br><br>
+
+    {% if image_name %}
+    <img src=" {{url_for('static' , filename= image_name)}}" class = 'center'>
+    {% endif %}
+
+{% endblock %}
